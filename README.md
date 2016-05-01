@@ -15,4 +15,4 @@ $ cd meteor-template-controller-demo
 $ meteor
 ```
 
-[http://localhost:3000](http://localhost:3000) 
+...then [http://localhost:3000](http://localhost:3000) 
