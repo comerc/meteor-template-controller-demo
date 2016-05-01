@@ -35,7 +35,7 @@ TemplateController 'demo',
         for variable of @modelMap
           @state[variable] ''
   state:
-    nodeId: null
+    nodeId: false
   helpers:
     nodes: ->
       Nodes.find()
