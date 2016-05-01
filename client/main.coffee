@@ -3,10 +3,14 @@
 
 require './main.jade'
 
+# 5 steps for start MVVM with TemplateController
+
+# step #1
 TemplateTwoWayBinding.getter = (variable) ->
   # this - Template.instance()
   return @state[variable]()
 
+# step #2
 TemplateTwoWayBinding.setter = (variable, value) ->
   # best place for external data validation (SimpleSchema, Astronomy etc.)
   TemplateControllerModelMap.validateOne.call @, variable, value
@@ -15,10 +19,12 @@ TemplateTwoWayBinding.setter = (variable, value) ->
 
 TemplateController 'demo',
   onCreated: ->
+    # step #3
     TemplateControllerModelMap.init.call @, NodeSchema.namedContext(@view.name),
       'head': 'fieldHead'
       'body': 'fieldBody'
   onRendered: ->
+    # step #4
     TemplateTwoWayBinding.rendered.call @
     @autorun =>
       if @state.nodeId()
@@ -38,6 +44,7 @@ TemplateController 'demo',
       @state.nodeId @$(e.target).data('node-id') or false
       return false
     'submit form': ->
+      # step #5
       data = TemplateControllerModelMap.getValidData.call @
       return false if not data
       # save data
