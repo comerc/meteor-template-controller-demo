@@ -1,0 +1,22 @@
+head
+  title simple
+
+body
+  +demo
+
+template(name="demo")
+  a.node(href="#") NEW
+  form
+    input(type="text" value-bind="head|throttle:500") 
+    = state.head
+    input(type="text" value-bind="body|debounce:500") 
+    = state.body
+    button(type="submit") SUBMIT
+  = state.errorMessages
+  ul
+    +each node in nodes
+      li 
+        a.node(href="#" data-node-id=node._id)  
+          = node.fieldHead  
+          | / 
+          = node.fieldBody
