@@ -41,15 +41,15 @@ TemplateController 'demo',
       Nodes.find()
   events:
     'click a.node': (e) ->
+      e.preventDefault()
       @state.nodeId @$(e.target).data('node-id') or false
-      return false
-    'submit form': ->
+    'submit form': (e) ->
+      e.preventDefault()
       # step #5
       data = TemplateControllerModelMap.getValidData.call @
-      return false if not data
+      return if not data
       # save data
       if @state.nodeId()
         Nodes.update @state.nodeId(), $set: data
       else
         @state.nodeId(Nodes.insert data)
-      return false
