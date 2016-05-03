@@ -12,6 +12,7 @@ template(name="demo")
     input(type="text" value-bind="body|debounce:500") 
     = state.body
     button(type="submit") SUBMIT
+    = state.submitMessage
   = state.errorMessages
   ul
     +each node in nodes

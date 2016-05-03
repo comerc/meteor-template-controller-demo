@@ -24,6 +24,6 @@ coffeescript
 mquandalle:jade
 aldeed:simple-schema
 aldeed:collection2
-space:template-controller
+space:template-controller@0.3.0
 comerc:template-two-way-binding
 comerc:template-controller-model-map
