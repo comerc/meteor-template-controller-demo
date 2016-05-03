@@ -35,7 +35,6 @@ TemplateController 'demo',
         for variable of @modelMap
           @state[variable] = ''
       @state.submitMessage = ''
-      @state.errorMessages = ''
   state:
     nodeId: false
     submitMessage: ''
