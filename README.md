@@ -16,3 +16,7 @@ $ meteor
 ```
 
 ...then [http://localhost:3000](http://localhost:3000) 
+
+## Next Step
+
+[Template2](https://github.com/comerc/meteor-template2) - is fork of TemplateController
